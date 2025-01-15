@@ -15,7 +15,7 @@ public class TestController {
 
     @GetMapping("test/api")
     public String test() {
-        return "this is test.";
+        return "바보😛";
     }
 
     @PostMapping("test/rds")

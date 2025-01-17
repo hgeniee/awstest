@@ -12,17 +12,17 @@ public class TestController {
 
     @Autowired
     private MemberRepository memberRepository;
+    @Autowired
+    private MemberService memberService;
 
-    @GetMapping("test/api")
+    @GetMapping("/myname")
     public String test() {
-        return "this is test.";
+        return "제 이름은 이현진입니다.";
     }
 
-    @PostMapping("test/rds")
-    public String testRds() {
-        Member member = new Member(1L, "test", "1234");
-        memberRepository.save(member);
-        return "ok";
+    @PostMapping("/myintro")
+    public Member myIntro(Member member) {
+        return memberService.myIntro(member);
     }
 
 }
